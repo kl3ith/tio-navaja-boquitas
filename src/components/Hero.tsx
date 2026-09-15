@@ -1,5 +1,5 @@
 import { Picture } from './Picture'
-import { Logo } from './Logo'
+import { Logo, Cutout } from './Brand'
 import { ArrowDown } from './Icons'
 import { AMBIENT, COPY } from '../content/boquitas'
 import { SITE } from '../content/config'
@@ -9,14 +9,15 @@ import './Hero.css'
 export function Hero() {
   const img = useParallax<HTMLDivElement>(0.12)
   return (
-    <header className="hero theme-night" id="top">
+    <header className="hero theme-petrol" id="top">
       <div className="hero__media" ref={img}>
         <Picture name={AMBIENT.hero.image} alt={AMBIENT.hero.alt} sizes="100vw" priority className="hero__img" />
       </div>
       <div className="hero__veil" aria-hidden="true" />
+      <div className="hero__pattern" aria-hidden="true" />
 
       <div className="hero__top">
-        <Logo className="hero__logo" />
+        <Logo variant="stack" className="hero__logo" />
       </div>
 
       <div className="hero__body wrap">
@@ -34,6 +35,7 @@ export function Hero() {
         </a>
       </div>
 
+      <Cutout name="palmeras" className="hero__palms" />
       <p className="hero__side" aria-hidden="true">
         {SITE.place}
       </p>

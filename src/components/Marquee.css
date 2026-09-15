@@ -22,13 +22,14 @@
 }
 .marquee__word {
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: var(--text-md);
-  letter-spacing: 0.02em;
+  font-size: var(--text-sm);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 .marquee__sep {
-  display: inline-flex;
-  width: 2.6rem;
+  width: 1.1rem;
+  transform: rotate(45deg);
+  opacity: 0.85;
 }
 @keyframes marquee {
   to {

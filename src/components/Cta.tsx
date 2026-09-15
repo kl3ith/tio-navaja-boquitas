@@ -2,15 +2,19 @@ import { useState } from 'react'
 import { COPY } from '../content/boquitas'
 import { CONTACT_URL } from '../content/config'
 import { ArrowRight } from './Icons'
+import { Cutout, Logo } from './Brand'
 import './Cta.css'
 
 export function Cta() {
   const [pending, setPending] = useState(false)
   const external = /^https?:/i.test(CONTACT_URL)
   return (
-    <section className="cta section theme-night" id="cotizar" aria-labelledby="cta-title">
-      <div className="cta__glow" aria-hidden="true" />
+    <section className="cta section theme-petrol" id="cotizar" aria-labelledby="cta-title">
+      <div className="cta__pattern" aria-hidden="true" />
+      <Cutout name="tio2" mask className="cta__tio" />
+      <Cutout name="navaja4" className="cta__knife" />
       <div className="wrap cta__inner">
+        <Logo variant="script" className="cta__signature reveal" label="Tío Navaja" />
         <p className="kicker reveal">Eventos</p>
         <h2 id="cta-title" className="cta__title display reveal">
           {COPY.cta.title}

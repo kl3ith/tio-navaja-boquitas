@@ -94,7 +94,7 @@ export function Modal({ item, category, onClose }: Props) {
           ) : (
             <div className="modal__typo" aria-hidden="true">
               <span className="modal__typo-num display">{String(idx).padStart(2, '0')}</span>
-              <span className="modal__typo-word display display-italic">{item.name}</span>
+              <span className="modal__typo-word script-big">{item.name}</span>
             </div>
           )}
         </div>

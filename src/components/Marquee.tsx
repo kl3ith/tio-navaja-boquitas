@@ -1,4 +1,4 @@
-import { Blade } from './Icons'
+import { Cutout } from './Brand'
 import './Marquee.css'
 
 const WORDS = ['Boquitas', 'Tío Navaja', 'El Cangrejo', 'Para compartir', 'Para celebrar', 'Para quedarse']
@@ -9,9 +9,7 @@ export function Marquee({ className = '' }: { className?: string }) {
       {WORDS.map((w, i) => (
         <span className="marquee__item" key={i}>
           <span className="marquee__word">{w}</span>
-          <span className="marquee__sep">
-            <Blade />
-          </span>
+          <Cutout name="navaja4" mask className="marquee__sep" />
         </span>
       ))}
     </span>

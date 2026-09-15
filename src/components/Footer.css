@@ -1,8 +1,13 @@
 .footer {
-  background: var(--ink);
+  background: var(--petrol-9);
   color: var(--cream);
-  padding-block: var(--s-8) calc(var(--s-7) + env(safe-area-inset-bottom));
-  border-top: 1px solid rgba(243, 234, 217, 0.14);
+  padding-block: 0 calc(var(--s-7) + env(safe-area-inset-bottom));
+}
+.footer__band {
+  height: 3.25rem;
+  background: var(--pat-crabs) repeat left center / 300px auto;
+  border-block: 2px solid var(--orange);
+  margin-bottom: var(--s-8);
 }
 .footer__inner {
   display: grid;
@@ -11,17 +16,18 @@
   text-align: center;
 }
 .footer__logo {
-  width: 9rem;
-  opacity: 0.9;
+  width: 11rem;
+  opacity: 0.95;
 }
 .footer__place {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  font-family: var(--font-display);
   font-size: var(--text-xs);
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(243, 234, 217, 0.75);
+  color: rgba(243, 231, 211, 0.75);
 }
 .footer__name {
   color: var(--cream);
@@ -64,8 +70,7 @@
 }
 .footer__fine {
   margin-top: var(--s-4);
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: var(--text-sm);
-  color: rgba(243, 234, 217, 0.55);
+  font-family: var(--font-script);
+  font-size: 1.5rem;
+  color: var(--orange-2);
 }

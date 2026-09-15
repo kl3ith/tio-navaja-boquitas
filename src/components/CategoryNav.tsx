@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { CATEGORIES } from '../content/boquitas'
 import { COPY } from '../content/boquitas'
-import { Logo } from './Logo'
+import { Logo } from './Brand'
 import './CategoryNav.css'
 
 interface Props {
@@ -22,7 +22,7 @@ export function CategoryNav({ active }: Props) {
     <nav className="catnav" aria-label="Categorías">
       <div className="catnav__inner">
         <a className="catnav__brand" href="#top" aria-label="Volver al inicio">
-          <Logo className="catnav__logo" />
+          <Logo variant="horizontal" className="catnav__logo" />
         </a>
         <ul className="catnav__list" ref={listRef}>
           {CATEGORIES.map((c) => (

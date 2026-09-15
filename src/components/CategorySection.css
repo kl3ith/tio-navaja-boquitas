@@ -2,6 +2,10 @@
   padding-block: var(--s-9);
   overflow: clip;
 }
+.cat > .wrap {
+  position: relative;
+  z-index: 1;
+}
 .cat__head {
   position: relative;
   display: grid;
@@ -16,35 +20,45 @@
 }
 .cat__title {
   font-size: var(--text-3xl);
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 0.9;
+  line-height: 0.92;
 }
 .cat__intro {
-  font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem);
+  font-size: clamp(1.9rem, 1.3rem + 2vw, 3rem);
   margin-top: 0.2rem;
 }
 .cat__count {
   position: absolute;
   right: 0;
   top: 0;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: var(--text-sm);
+  font-family: var(--font-script);
+  font-size: 1.4rem;
   color: var(--muted);
+}
+.cat__knife {
+  position: absolute;
+  right: clamp(0rem, 4vw, 4rem);
+  top: -1rem;
+  width: clamp(5.5rem, 12vw, 11rem);
+  transform: rotate(18deg);
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.25));
 }
 .cat__grid {
   display: grid;
   gap: var(--s-6);
 }
 
-/* ===== FRÍAS: composición asimétrica con superposición ===== */
+/* ===== FRÍAS: crema + petróleo ===== */
 .cat--frias .card--type .card__typo {
-  color: var(--petrol-3);
+  color: var(--petrol);
+}
+.cat--frias .card--type {
+  background: rgba(0, 76, 69, 0.04);
 }
 .cat--frias .card--feature .card__media {
-  outline-color: var(--petrol-3);
+  outline-color: var(--petrol);
+}
+.cat--frias .cat__title {
+  color: var(--petrol);
 }
 @media (min-width: 1024px) {
   .cat--frias .cat__grid {
@@ -82,42 +96,53 @@
   }
 }
 
-/* ===== CALIENTES: bento denso con foto ambiente ===== */
+/* ===== CALIENTES: vino + naranja + palmeras ===== */
+.cat--calientes::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--pat-palms-wine) repeat left top / 380px auto;
+  opacity: 0.35;
+  mix-blend-mode: luminosity;
+  pointer-events: none;
+}
 .cat--calientes .cat__head {
   border-bottom-color: var(--orange);
-}
-.cat--calientes .cat__title {
-  color: var(--cream);
 }
 .cat--calientes .cat__ambient {
   position: relative;
   margin: 0 0 var(--s-7);
   max-width: 24rem;
   will-change: transform;
+  outline: 2px solid var(--orange);
+  outline-offset: 0.5rem;
 }
 .cat--calientes .cat__ambient img {
   width: 100%;
   height: auto;
-  filter: saturate(1.05);
 }
 .cat__ambient-tag {
   position: absolute;
   left: -0.5rem;
   bottom: 1.5rem;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--orange-2);
   transform: rotate(-5deg);
-  background: var(--ink-2);
-  padding: 0.1rem 0.6rem;
+  background: var(--wine-9);
+  padding: 0.1rem 0.7rem 0.3rem;
 }
 .cat--calientes .card--type {
-  background: rgba(243, 234, 217, 0.03);
+  background: rgba(63, 15, 28, 0.55);
+  border-color: rgba(243, 231, 211, 0.25);
 }
 .cat--calientes .card--type .card__typo {
-  color: var(--orange);
+  color: var(--orange-2);
 }
 .cat--calientes .card--feature .card__media {
   outline-color: var(--orange);
+}
+.cat--calientes .card__media {
+  background: var(--wine-9);
 }
 @media (min-width: 640px) {
   .cat--calientes .cat__grid {
@@ -139,6 +164,13 @@
     grid-template-columns: 1fr;
     padding-right: 32%;
   }
+  .cat--calientes .cat__knife {
+    right: 34%;
+    top: auto;
+    bottom: 0.25rem;
+    width: clamp(5rem, 8.5vw, 7.5rem);
+    transform: rotate(24deg);
+  }
   .cat--calientes .cat__ambient {
     position: absolute;
     right: var(--gutter);
@@ -151,58 +183,64 @@
     grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-auto-rows: auto;
     row-gap: var(--s-8);
-    padding-right: 0;
   }
-  /* 1 Yakitori (feature) */
   .cat--calientes .card:nth-child(1) {
     grid-column: 1 / 8;
     margin-top: 6rem;
   }
-  /* 2 Sliders */
   .cat--calientes .card:nth-child(2) {
     grid-column: 9 / 13;
     align-self: end;
   }
-  /* 3 Canastitas (photo) */
   .cat--calientes .card:nth-child(3) {
     grid-column: 1 / 5;
   }
-  /* 4 Croqueta pulpo */
   .cat--calientes .card:nth-child(4) {
     grid-column: 5 / 9;
   }
-  /* 5 Croquetas jamón */
   .cat--calientes .card:nth-child(5) {
     grid-column: 9 / 13;
     transform: translateY(2.5rem);
   }
-  /* 6 Carimañola (photo) */
   .cat--calientes .card:nth-child(6) {
     grid-column: 8 / 13;
   }
-  /* 7 Wings */
   .cat--calientes .card:nth-child(7) {
     grid-column: 1 / 4;
     align-self: end;
   }
-  /* 8 Wanton */
   .cat--calientes .card:nth-child(8) {
     grid-column: 4 / 8;
     align-self: end;
   }
 }
 
-/* ===== DULCES: carta + flat-lay pegado ===== */
+/* ===== DULCES: rosa floral + vino ===== */
+.cat--dulces::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--pat-floral) repeat left top / 300px auto;
+  opacity: 0.3;
+  pointer-events: none;
+}
 .cat--dulces .cat__head {
-  border-bottom-color: var(--orange-2);
+  border-bottom-color: var(--wine);
+}
+.cat--dulces .cat__title {
+  color: var(--wine-2);
+}
+.cat--dulces .cat__intro {
+  color: var(--wine);
 }
 .cat--dulces .cat__flatlay {
   position: relative;
   margin-bottom: var(--s-7);
   max-height: 70vh;
   overflow: hidden;
-  outline: 1px solid var(--line-strong);
+  outline: 2px solid var(--wine);
   outline-offset: 0.6rem;
+  background: var(--wine-9);
 }
 .cat--dulces .cat__flatlay img {
   width: 100%;
@@ -214,14 +252,21 @@
   position: absolute;
   left: 1rem;
   bottom: 1rem;
-  padding: 0.35rem 0.7rem;
-  background: var(--burgundy);
+  padding: 0.4rem 0.7rem;
+  background: var(--wine-2);
   color: var(--cream);
+}
+.cat--dulces .card--row {
+  border-bottom-color: rgba(94, 23, 41, 0.35);
+}
+.cat--dulces .card--row .card__media {
+  border: 3px solid var(--cream);
+  box-shadow: 0 0 0 1px rgba(94, 23, 41, 0.35);
 }
 .cat--dulces .card--row .card__num,
 .cat--dulces .card--row .card__more {
-  color: var(--orange-2);
-  border-color: var(--line-strong);
+  color: var(--wine);
+  border-color: rgba(94, 23, 41, 0.6);
 }
 @media (min-width: 1024px) {
   .cat--dulces .wrap {
@@ -253,6 +298,13 @@
   .cat__count {
     position: static;
     margin-top: var(--s-2);
+  }
+  .cat__knife {
+    top: auto;
+    bottom: 0.75rem;
+    right: 0;
+    width: 4.6rem;
+    transform: rotate(22deg);
   }
   .cat--dulces .cat__flatlay {
     max-height: 60vh;

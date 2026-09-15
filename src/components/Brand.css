@@ -1,0 +1,21 @@
+.logo {
+  display: inline-block;
+  width: 12rem;
+  background-color: currentColor;
+  -webkit-mask: var(--art) no-repeat center / contain;
+  mask: var(--art) no-repeat center / contain;
+}
+.cutout {
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+.cutout--mask {
+  background-color: currentColor;
+  -webkit-mask: var(--art) no-repeat center / contain;
+  mask: var(--art) no-repeat center / contain;
+}
+img.cutout {
+  height: auto;
+  object-fit: contain;
+}

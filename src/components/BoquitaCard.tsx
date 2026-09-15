@@ -33,7 +33,7 @@ export function BoquitaCard({ item, index, variant, onOpen, note, sizes, style, 
       )}
       {!withPhoto && variant !== 'row' && (
         <div className="card__typo" aria-hidden="true">
-          <span className="card__typo-big display display-italic">{item.name.split(' ')[0]}</span>
+          <span className="card__typo-big script-big">{item.name.split(' ')[0]}</span>
         </div>
       )}
       <div className="card__body">

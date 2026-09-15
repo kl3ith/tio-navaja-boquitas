@@ -1,0 +1,22 @@
+/* Tipografías de marca Tío Navaja (archivos locales, sin CDN) */
+@font-face {
+  font-family: 'Chrone';
+  src: url('../assets/fonts/Chrone.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DMSans-Variable.ttf') format('truetype');
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Michigan Signature';
+  src: url('../assets/fonts/MichiganSignature.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

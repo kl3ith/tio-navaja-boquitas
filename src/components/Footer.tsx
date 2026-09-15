@@ -1,4 +1,4 @@
-import { Logo } from './Logo'
+import { Logo } from './Brand'
 import { Instagram, WhatsApp, Phone } from './Icons'
 import { CONTACT, SITE } from '../content/config'
 import './Footer.css'
@@ -12,8 +12,9 @@ export function Footer() {
 
   return (
     <footer className="footer" role="contentinfo">
+      <div className="footer__band" aria-hidden="true" />
       <div className="wrap footer__inner">
-        <Logo className="footer__logo" />
+        <Logo variant="horizontal" className="footer__logo" />
         <p className="footer__place">
           <span className="footer__name">{SITE.name}</span>
           <span className="footer__sep" aria-hidden="true" />

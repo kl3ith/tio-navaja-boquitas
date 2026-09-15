@@ -1,4 +1,5 @@
 import { Picture } from './Picture'
+import { Cutout } from './Brand'
 import { ArrowRight } from './Icons'
 import { CATEGORIES, COPY } from '../content/boquitas'
 import './Intro.css'
@@ -12,6 +13,7 @@ const TILE_IMAGE: Record<string, { image: string; alt: string }> = {
 export function Intro() {
   return (
     <section className="intro section theme-bone" id="intro" aria-labelledby="intro-title">
+      <Cutout name="tio1" mask className="intro__tio" />
       <div className="wrap intro__grid">
         <div className="intro__text">
           <p className="kicker reveal">Bienvenida</p>
@@ -24,7 +26,7 @@ export function Intro() {
 
         <ol className="intro__tiles" aria-label="Categorías de boquitas">
           {CATEGORIES.map((c, i) => (
-            <li className="intro__tile reveal" style={{ ['--reveal-delay' as string]: `${i * 90}ms` }} key={c.id}>
+            <li className={`intro__tile intro__tile--${c.id} reveal`} style={{ ['--reveal-delay' as string]: `${i * 90}ms` }} key={c.id}>
               <a className="intro__tile-link" href={`#${c.id}`}>
                 <span className="intro__tile-num display">{c.number}</span>
                 <span className="intro__tile-media">

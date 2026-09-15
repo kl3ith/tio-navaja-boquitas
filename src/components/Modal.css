@@ -9,7 +9,7 @@
 .modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(13, 12, 11, 0.78);
+  background: rgba(7, 32, 31, 0.82);
   animation: fade var(--dur) var(--ease-out) both;
 }
 .modal__panel {
@@ -70,23 +70,27 @@
   gap: var(--s-3);
 }
 .modal--frias .modal__typo {
-  background: var(--petrol);
+  background: var(--petrol) var(--pat-palms-petrol) repeat center / 320px auto;
 }
 .modal--calientes .modal__typo {
-  background: var(--burgundy-2);
+  background: var(--wine) var(--pat-palms-wine) repeat center / 320px auto;
 }
 .modal--dulces .modal__typo {
-  background: var(--burgundy);
+  background: var(--pink) var(--pat-floral) repeat center / 300px auto;
+  color: var(--wine-9);
+}
+.modal--dulces .modal__typo-num {
+  color: var(--wine);
 }
 .modal__typo-num {
-  font-style: italic;
-  font-size: var(--text-lg);
+  font-family: var(--font-script);
+  font-size: 2rem;
   color: var(--orange-2);
 }
 .modal__typo-word {
-  font-size: clamp(2.2rem, 1.4rem + 4vw, 4.2rem);
-  line-height: 0.95;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.4rem, 1.4rem + 4vw, 4.4rem);
+  line-height: 1.05;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
 }
 .modal__body {
   padding: var(--s-6) var(--s-5) calc(var(--s-6) + env(safe-area-inset-bottom));
@@ -96,7 +100,7 @@
 }
 .modal__title {
   font-size: var(--text-xl);
-  font-weight: 500;
+  color: var(--petrol);
 }
 .modal__desc {
   color: var(--muted);
@@ -107,10 +111,9 @@
   margin-top: var(--s-3);
 }
 .modal__foot {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: var(--text-sm);
-  color: var(--muted);
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  color: var(--wine);
 }
 @media (min-width: 900px) {
   .modal {

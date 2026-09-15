@@ -1,50 +1,61 @@
 /* ==========================================================================
-   Tío Navaja · Boquitas — Design tokens
-   Paleta: verde petróleo, burgundy, rojo vino, naranja cálido, crema, negro.
-   El color se usa como acento; la base es crema (día) y petróleo/negro (noche).
+   Tío Navaja · Boquitas — Design tokens (línea gráfica oficial)
+   Paleta tomada de los fondos y elementos de marca: verde petróleo, vino,
+   naranja cangrejo, rosa y crema. Tipografías: Chrone / DM Sans / Michigan Signature.
    ========================================================================== */
 :root {
-  /* Color */
-  --ink: #0d0c0b;
-  --ink-2: #1a1816;
-  --petrol: #0f2b2e;
-  --petrol-2: #163b3f;
-  --petrol-3: #23555a;
-  --burgundy: #571522;
-  --burgundy-2: #6e1c2c;
-  --wine: #8f2a36;
-  --orange: #e2793a;
-  --orange-2: #f0a35c;
-  --cream: #f3ead9;
-  --cream-2: #eadfc8;
-  --bone: #fbf6ec;
-  --sand: #d9c9a8;
+  /* Color de marca */
+  --ink: #0a0a0a;
+  --ink-2: #141312;
+  --petrol: #004c45;
+  --petrol-2: #0b3f3b;
+  --petrol-3: #17605b;
+  --petrol-9: #07201f;
+  --wine: #8a1e40;
+  --wine-2: #5e1729;
+  --wine-9: #3f0f1c;
+  --orange: #e2662a;
+  --orange-2: #f0813c;
+  --orange-3: #f3a06a;
+  --pink: #f5abb8;
+  --pink-2: #f8d0d8;
+  --pink-3: #da889a;
+  --cream: #f3e7d3;
+  --cream-2: #e8dbc3;
+  --bone: #faf3e7;
+  --sand: #cfc0a8;
 
   /* Roles */
   --bg: var(--cream);
   --fg: var(--ink);
-  --muted: #5e5449;
-  --line: rgba(13, 12, 11, 0.18);
-  --line-strong: rgba(13, 12, 11, 0.55);
-  --accent: var(--wine);
+  --muted: #5b524a;
+  --line: rgba(10, 10, 10, 0.18);
+  --line-strong: rgba(10, 10, 10, 0.55);
+  --accent: var(--petrol);
   --accent-warm: var(--orange);
   --focus: var(--orange);
 
-  /* Type */
-  --font-display: 'Fraunces Variable', 'Iowan Old Style', 'Palatino', Georgia, serif;
-  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-script: 'Caveat', 'Bradley Hand', 'Comic Sans MS', cursive;
+  /* Patrones de marca */
+  --pat-palms-petrol: url('../assets/brand/bg-bg1.webp');
+  --pat-palms-wine: url('../assets/brand/bg-bg2.webp');
+  --pat-crabs: url('../assets/brand/bg-bg3.webp');
+  --pat-floral: url('../assets/brand/bg-bg5.webp');
+
+  /* Tipografía */
+  --font-display: 'Chrone', 'Copperplate', 'Arial Black', sans-serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-script: 'Michigan Signature', 'Snell Roundhand', 'Brush Script MT', cursive;
 
   --text-xs: 0.72rem;
   --text-sm: 0.85rem;
   --text-base: 1rem;
   --text-md: 1.125rem;
-  --text-lg: clamp(1.25rem, 1.05rem + 0.9vw, 1.6rem);
-  --text-xl: clamp(1.75rem, 1.3rem + 2vw, 2.75rem);
-  --text-2xl: clamp(2.4rem, 1.6rem + 4vw, 4.5rem);
-  --text-3xl: clamp(3.6rem, 2rem + 9vw, 9.5rem);
+  --text-lg: clamp(1.2rem, 1.05rem + 0.8vw, 1.5rem);
+  --text-xl: clamp(1.35rem, 1.1rem + 1.2vw, 2rem);
+  --text-2xl: clamp(2rem, 1.3rem + 3.2vw, 3.8rem);
+  --text-3xl: clamp(3rem, 1.5rem + 7.5vw, 8rem);
 
-  /* Space (escala espaciosa) */
+  /* Espacio */
   --s-1: 0.25rem;
   --s-2: 0.5rem;
   --s-3: 0.75rem;
@@ -71,37 +82,37 @@
 }
 
 /* Contextos de color por sección */
-.theme-night {
+.theme-petrol {
   --bg: var(--petrol);
   --fg: var(--cream);
-  --muted: rgba(243, 234, 217, 0.68);
-  --line: rgba(243, 234, 217, 0.2);
-  --line-strong: rgba(243, 234, 217, 0.6);
+  --muted: rgba(243, 231, 211, 0.72);
+  --line: rgba(243, 231, 211, 0.2);
+  --line-strong: rgba(243, 231, 211, 0.6);
   --accent: var(--orange-2);
   --focus: var(--orange-2);
 }
-.theme-ember {
-  --bg: var(--ink-2);
+.theme-wine {
+  --bg: var(--wine-2);
   --fg: var(--cream);
-  --muted: rgba(243, 234, 217, 0.66);
-  --line: rgba(243, 234, 217, 0.18);
-  --line-strong: rgba(243, 234, 217, 0.6);
-  --accent: var(--orange);
-  --focus: var(--orange-2);
-}
-.theme-plum {
-  --bg: var(--burgundy);
-  --fg: var(--cream);
-  --muted: rgba(243, 234, 217, 0.7);
-  --line: rgba(243, 234, 217, 0.22);
-  --line-strong: rgba(243, 234, 217, 0.62);
+  --muted: rgba(243, 231, 211, 0.7);
+  --line: rgba(243, 231, 211, 0.2);
+  --line-strong: rgba(243, 231, 211, 0.6);
   --accent: var(--orange-2);
   --focus: var(--orange-2);
+}
+.theme-pink {
+  --bg: var(--pink-2);
+  --fg: var(--wine-9);
+  --muted: #6d2a3b;
+  --line: rgba(94, 23, 41, 0.22);
+  --line-strong: rgba(94, 23, 41, 0.6);
+  --accent: var(--wine);
+  --focus: var(--wine);
 }
 .theme-bone {
   --bg: var(--bone);
   --fg: var(--ink);
-  --muted: #5e5449;
-  --line: rgba(13, 12, 11, 0.16);
-  --accent: var(--petrol-3);
+  --muted: #5b524a;
+  --line: rgba(10, 10, 10, 0.16);
+  --accent: var(--petrol);
 }

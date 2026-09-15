@@ -2,6 +2,7 @@ import type { Boquita, Category } from '../content/boquitas'
 import { AMBIENT } from '../content/boquitas'
 import { BoquitaCard, type Variant } from './BoquitaCard'
 import { Picture } from './Picture'
+import { Cutout, type ArtName } from './Brand'
 import { useParallax } from '../hooks/useParallax'
 import './CategorySection.css'
 
@@ -23,8 +24,13 @@ const NOTES: Record<string, Record<string, string>> = {
 }
 const THEME: Record<string, string> = {
   frias: 'theme-bone',
-  calientes: 'theme-ember',
-  dulces: 'theme-plum',
+  calientes: 'theme-wine',
+  dulces: 'theme-pink',
+}
+const KNIFE: Record<string, ArtName> = {
+  frias: 'navaja5',
+  calientes: 'navaja6',
+  dulces: 'navaja3',
 }
 
 export function CategorySection({ category, onOpen }: Props) {
@@ -49,6 +55,7 @@ export function CategorySection({ category, onOpen }: Props) {
           <p className="cat__intro script reveal" aria-hidden="true">
             {category.intro}
           </p>
+          <Cutout name={KNIFE[category.id]} className="cat__knife" />
           <p className="cat__count reveal">
             {category.items.length} {category.items.length === 1 ? 'boquita' : 'boquitas'}
           </p>

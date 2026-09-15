@@ -1,16 +1,27 @@
 .intro {
   padding-block: var(--s-9) var(--s-9);
+  overflow: clip;
+}
+.intro__tio {
+  position: absolute;
+  right: clamp(-3rem, -2vw, 0rem);
+  bottom: 0;
+  height: min(78%, 34rem);
+  color: var(--petrol);
+  opacity: 0.12;
+  z-index: 0;
 }
 .intro__grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: var(--s-8);
 }
 .intro__title {
-  font-size: clamp(2.2rem, 1.3rem + 3.2vw, 4.2rem);
+  font-size: clamp(1.9rem, 1.1rem + 3vw, 3.6rem);
   margin-top: var(--s-4);
-  max-width: 14ch;
-  text-transform: uppercase;
-  font-weight: 600;
+  max-width: 16ch;
+  color: var(--petrol);
 }
 .intro__p {
   margin-top: var(--s-5);
@@ -20,10 +31,9 @@
 }
 .intro__p--lead {
   color: var(--fg);
-  font-family: var(--font-display);
-  font-variation-settings: 'opsz' 24, 'SOFT' 40;
   font-size: var(--text-lg);
-  line-height: 1.35;
+  font-weight: 500;
+  line-height: 1.4;
   margin-top: var(--s-6);
 }
 .intro__tiles {
@@ -33,7 +43,6 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--s-4);
-  counter-reset: tile;
 }
 .intro__tile-link {
   position: relative;
@@ -41,10 +50,26 @@
   grid-template-rows: auto 1fr auto auto;
   min-height: 100%;
   padding: var(--s-4);
-  border: 1px solid var(--line-strong);
   text-decoration: none;
-  color: inherit;
-  transition: transform var(--dur) var(--ease-out), background-color var(--dur) var(--ease-out);
+  color: var(--cream);
+  background-color: var(--petrol);
+  background-image: var(--pat-palms-petrol);
+  background-size: 260px auto;
+  border: 2px solid rgba(243, 231, 211, 0.35);
+  outline: 1px solid var(--line-strong);
+  outline-offset: 5px;
+  overflow: hidden;
+  transition: transform var(--dur) var(--ease-out), filter var(--dur) var(--ease-out);
+}
+.intro__tile--calientes .intro__tile-link {
+  background-color: var(--wine);
+  background-image: var(--pat-palms-wine);
+}
+.intro__tile--dulces .intro__tile-link {
+  background-color: var(--pink);
+  background-image: linear-gradient(rgba(248, 208, 216, 0.62), rgba(248, 208, 216, 0.62)), var(--pat-floral);
+  color: var(--wine-9);
+  border-color: rgba(94, 23, 41, 0.3);
 }
 .intro__tile:nth-child(1) .intro__tile-link {
   transform: rotate(-1.2deg);
@@ -56,9 +81,14 @@
   transform: rotate(1deg);
 }
 .intro__tile-num {
-  font-size: var(--text-xl);
-  font-style: italic;
-  color: var(--accent);
+  font-family: var(--font-script);
+  font-size: 2.2rem;
+  line-height: 1;
+  text-transform: none;
+  color: var(--orange-3);
+}
+.intro__tile--dulces .intro__tile-num {
+  color: var(--wine);
 }
 .intro__tile-media {
   display: block;
@@ -66,6 +96,8 @@
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: 999px;
+  border: 3px solid var(--cream);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
 }
 .intro__tile-media img {
   width: 100%;
@@ -74,11 +106,9 @@
   transition: transform var(--dur-slow) var(--ease-out);
 }
 .intro__tile-label {
-  font-size: clamp(1rem, 0.3rem + 1.15vw, 1.7rem);
-  letter-spacing: -0.01em;
+  font-size: clamp(1rem, 0.3rem + 1.15vw, 1.5rem);
+  letter-spacing: 0.06em;
   overflow-wrap: anywhere;
-  text-transform: uppercase;
-  font-weight: 600;
 }
 .intro__tile-kicker {
   display: inline-flex;
@@ -86,9 +116,9 @@
   gap: 0.4rem;
   margin-top: 0.4rem;
   font-size: var(--text-xs);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  opacity: 0.85;
 }
 .intro__tile-kicker svg {
   width: 1rem;
@@ -97,7 +127,7 @@
 }
 @media (hover: hover) {
   .intro__tile-link:hover {
-    background: var(--cream-2);
+    filter: brightness(1.08);
   }
   .intro__tile-link:hover img {
     transform: scale(1.06);
@@ -118,10 +148,21 @@
   .intro__tile-link {
     padding: var(--s-5);
   }
+  .intro__tio {
+    right: 2%;
+    opacity: 0.1;
+  }
 }
 @media (max-width: 640px) {
   .intro {
     padding-block: var(--s-8);
+  }
+  .intro__tio {
+    height: 14rem;
+    right: -2rem;
+    top: 1rem;
+    bottom: auto;
+    opacity: 0.1;
   }
   .intro__tiles {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -132,6 +173,7 @@
   .intro__tile:nth-child(3) .intro__tile-link {
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
+    align-content: center;
     column-gap: var(--s-4);
     transform: none;
   }

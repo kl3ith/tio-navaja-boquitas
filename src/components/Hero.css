@@ -8,6 +8,25 @@
   color: var(--cream);
   isolation: isolate;
 }
+.hero__pattern {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--pat-palms-petrol) repeat left top / 420px auto;
+  opacity: 0.14;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+.hero__palms {
+  position: absolute;
+  right: -2%;
+  bottom: -4%;
+  width: clamp(9rem, 22vw, 20rem);
+  opacity: 0.55;
+  z-index: -1;
+  filter: saturate(0.8);
+  animation: rise 1.2s var(--ease-out) 0.9s both;
+}
 .hero__media {
   position: absolute;
   inset: -8% 0;
@@ -26,8 +45,8 @@
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(15, 43, 46, 0.55) 0%, rgba(15, 43, 46, 0.15) 35%, rgba(13, 12, 11, 0.55) 75%, rgba(13, 12, 11, 0.85) 100%),
-    linear-gradient(90deg, rgba(13, 12, 11, 0.35), transparent 60%);
+    linear-gradient(180deg, rgba(0, 76, 69, 0.62) 0%, rgba(0, 76, 69, 0.18) 35%, rgba(7, 32, 31, 0.6) 75%, rgba(7, 32, 31, 0.92) 100%),
+    linear-gradient(90deg, rgba(7, 32, 31, 0.4), transparent 60%);
 }
 .hero__top {
   display: flex;
@@ -36,7 +55,7 @@
   animation: rise 0.9s var(--ease-out) 0.1s both;
 }
 .hero__logo {
-  width: clamp(9rem, 22vw, 14rem);
+  width: clamp(10rem, 24vw, 16rem);
 }
 .hero__body {
   align-self: end;
@@ -50,11 +69,9 @@
 .hero__title {
   position: relative;
   font-size: var(--text-3xl);
-  text-transform: uppercase;
-  letter-spacing: -0.03em;
-  font-weight: 600;
+  letter-spacing: 0.02em;
   margin-top: var(--s-3);
-  line-height: 0.88;
+  line-height: 0.92;
   animation: rise 1s var(--ease-out) 0.45s both;
 }
 .hero__title-word {
@@ -64,7 +81,7 @@
   position: absolute;
   left: 58%;
   bottom: -0.55em;
-  font-size: clamp(1.5rem, 1rem + 2.5vw, 3rem);
+  font-size: clamp(1.9rem, 1.2rem + 3vw, 3.6rem);
   color: var(--orange-2);
   transform: rotate(-6deg);
   white-space: nowrap;
@@ -73,10 +90,10 @@
 .hero__sub {
   margin-top: var(--s-6);
   max-width: 34rem;
-  font-family: var(--font-display);
-  font-variation-settings: 'opsz' 24, 'SOFT' 50;
+  font-family: var(--font-sans);
+  font-weight: 400;
   font-size: var(--text-lg);
-  line-height: 1.35;
+  line-height: 1.4;
   animation: rise 0.9s var(--ease-out) 0.65s both;
 }
 .hero__cta {
@@ -88,25 +105,30 @@
   right: var(--gutter);
   bottom: clamp(3rem, 10vh, 6rem);
   writing-mode: vertical-rl;
+  font-family: var(--font-display);
   font-size: var(--text-xs);
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(243, 234, 217, 0.7);
+  color: rgba(243, 231, 211, 0.7);
   animation: rise 0.9s var(--ease-out) 1s both;
 }
 .hero__corner {
   position: absolute;
   top: clamp(1.25rem, 4vh, 2.5rem);
   right: var(--gutter);
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: var(--text-sm);
-  color: rgba(243, 234, 217, 0.7);
+  font-family: var(--font-script);
+  font-size: 1.35rem;
+  color: rgba(243, 231, 211, 0.75);
 }
 @media (max-width: 640px) {
   .hero__side,
   .hero__corner {
     display: none;
+  }
+  .hero__palms {
+    opacity: 0.35;
+    width: 8rem;
+    bottom: 6rem;
   }
   .hero__title {
     line-height: 0.92;
