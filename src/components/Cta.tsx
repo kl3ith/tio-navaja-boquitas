@@ -1,13 +1,11 @@
-import { useState } from 'react'
 import { COPY } from '../content/boquitas'
-import { CONTACT_URL } from '../content/config'
 import { ArrowRight } from './Icons'
 import { Cutout, Logo } from './Brand'
+import { useSelection } from '../hooks/useSelection'
 import './Cta.css'
 
-export function Cta() {
-  const [pending, setPending] = useState(false)
-  const external = /^https?:/i.test(CONTACT_URL)
+export function Cta({ onQuote }: { onQuote: () => void }) {
+  const { count } = useSelection()
   return (
     <section className="cta section theme-petrol" id="cotizar" aria-labelledby="cta-title">
       <div className="cta__pattern" aria-hidden="true" />
@@ -22,27 +20,15 @@ export function Cta() {
         <p className="cta__p reveal">{COPY.cta.p1}</p>
         <p className="cta__p cta__p--strong reveal">{COPY.cta.p2}</p>
         <div className="cta__action reveal">
-          {CONTACT_URL ? (
-            <a
-              className="btn btn--solid"
-              href={CONTACT_URL}
-              target={external ? '_blank' : undefined}
-              rel={external ? 'noopener noreferrer' : undefined}
-            >
-              {COPY.cta.button}
-              <ArrowRight />
-            </a>
-          ) : (
-            <>
-              <button type="button" className="btn btn--solid" onClick={() => setPending(true)} aria-describedby="cta-pending">
-                {COPY.cta.button}
-                <ArrowRight />
-              </button>
-              <p id="cta-pending" className={`cta__pending${pending ? ' is-visible' : ''}`} role="status" aria-live="polite">
-                {pending ? COPY.cta.pending : ''}
-              </p>
-            </>
-          )}
+          <button type="button" className="btn btn--solid" onClick={onQuote}>
+            {COPY.cta.button}
+            <ArrowRight />
+          </button>
+          <p className="cta__hint">
+            {count > 0
+              ? `Ya elegiste ${count} ${count === 1 ? 'boquita' : 'boquitas'}: armamos el mensaje por ti.`
+              : 'Elige tus boquitas y armamos el mensaje por ti.'}
+          </p>
         </div>
       </div>
     </section>

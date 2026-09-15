@@ -198,7 +198,90 @@
   .card--type .card__typo-big {
     font-size: 2.5rem;
   }
-  .card--row .card__more {
+}
+
+/* --- Botón agregar / quitar de la selección --- */
+.addbtn {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.9rem 0.4rem 0.6rem;
+  justify-self: start;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg);
+  border: 1.5px solid var(--line-strong);
+  border-radius: 999px;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+.addbtn__icon {
+  display: grid;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+}
+.addbtn__icon svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+.addbtn.is-on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--cream);
+}
+.theme-pink .addbtn.is-on {
+  color: var(--cream);
+}
+@media (hover: hover) {
+  .addbtn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--cream);
+  }
+  .addbtn.is-on:hover {
+    background: var(--wine);
+    border-color: var(--wine);
+  }
+}
+.card .addbtn {
+  margin-top: var(--s-2);
+}
+.card--row .addbtn {
+  margin-top: 0;
+  align-self: center;
+}
+/* Sello sobre la foto cuando está elegida */
+.card[data-selected] .card__media::after {
+  content: '';
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f3e7d3' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") no-repeat center / 62%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+@media (max-width: 640px) {
+  .addbtn {
+    min-height: var(--tap);
+  }
+  .card--row .addbtn {
+    padding: 0.4rem;
+    min-width: var(--tap);
+    justify-content: center;
+  }
+  .card--row .addbtn__label {
     display: none;
   }
 }

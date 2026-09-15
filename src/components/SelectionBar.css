@@ -1,0 +1,67 @@
+.selbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 45;
+  background: rgba(7, 32, 31, 0.95);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-top: 2px solid var(--orange);
+  color: var(--cream);
+  padding: 0.6rem var(--gutter) calc(0.6rem + env(safe-area-inset-bottom));
+  transform: translateY(110%);
+  transition: transform var(--dur) var(--ease-out);
+}
+.selbar.is-visible {
+  transform: none;
+}
+.selbar__inner {
+  width: min(100%, var(--max));
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+}
+.selbar__count {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  min-width: 0;
+}
+.selbar__num {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  background: var(--orange);
+  color: var(--ink);
+  font-size: 1rem;
+}
+.selbar__btn {
+  flex-shrink: 0;
+  padding: 0.7rem 1.2rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .selbar {
+    transition: none;
+  }
+}
+@media (max-width: 420px) {
+  .selbar__count span:not(.selbar__num) {
+    font-size: 0.62rem;
+    max-width: 6.5rem;
+    line-height: 1.2;
+  }
+  .selbar__btn {
+    padding: 0.7rem 0.9rem;
+    letter-spacing: 0.1em;
+  }
+}

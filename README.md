@@ -23,7 +23,9 @@ La carpeta `dist/` es autocontenida: se puede abrir desde cualquier servidor est
 |---|---|
 | Textos de hero, intro y CTA | `src/content/boquitas.ts` → `COPY` |
 | Boquitas (nombre, descripción, foto) | `src/content/boquitas.ts` → `CATEGORIES` |
-| Enlace del botón **Quiero cotizar** | `src/content/config.ts` → `CONTACT_URL` |
+| Canal al que llega la cotización | `src/content/config.ts` → `CONTACT_URL` |
+| Textos del panel de cotización | `src/content/quote.ts` → `QUOTE_COPY` |
+| Formato del mensaje automático | `src/content/quote.ts` → `buildQuoteMessage` |
 | Instagram / WhatsApp / teléfono del footer | `src/content/config.ts` → `CONTACT` |
 | Título y descripción SEO | `index.html` y `src/content/config.ts` → `SITE` |
 | Paleta, tipografías, espaciados | `src/styles/tokens.css` |
@@ -39,13 +41,36 @@ La carpeta `dist/` es autocontenida: se puede abrir desde cualquier servidor est
 
 Las boquitas **sin** `image` se muestran con un tratamiento tipográfico, de modo que la pieza queda visualmente completa aunque falte la foto.
 
+## Selección y mensaje automático
+
+Cada boquita tiene un botón **Agregar**. La selección se guarda en el navegador del
+cliente (sobrevive a recargas) y una barra flotante abre el panel **Mi selección**, donde:
+
+1. Se listan las boquitas elegidas agrupadas por categoría, con opción de quitarlas.
+2. Se pueden indicar (opcional) personas aproximadas y fecha tentativa.
+3. Se arma **solo** el texto del mensaje y se muestra tal cual se va a enviar.
+4. Se envía por el canal de `CONTACT_URL` o se copia al portapapeles.
+
+El mensaje se adjunta automáticamente al enlace según el canal:
+
+| `CONTACT_URL` | Comportamiento |
+|---|---|
+| `https://wa.me/507XXXXXXXX` | Abre WhatsApp con el mensaje precargado (`?text=`) |
+| `mailto:eventos@ejemplo.com` | Abre el correo con el mensaje en el cuerpo (`&body=`) |
+| Cualquier otro enlace | Lo abre tal cual y avisa que hay que copiar el mensaje |
+| Vacío (hoy) | Solo ofrece copiar el mensaje, sin enlaces rotos |
+
+No se envía nada a ningún servidor: todo se arma en el navegador y es el cliente
+quien manda el mensaje desde su propio WhatsApp o correo.
+
 ## Estructura
 
 ```
 src/
   content/      textos, catálogo y manifiesto de imágenes
-  components/   Hero, Intro, CategoryNav, CategorySection, BoquitaCard, Modal, Cta, Footer…
-  hooks/        useReveal, useParallax, useScrollSpy
+  components/   Hero, Intro, CategoryNav, CategorySection, BoquitaCard, Modal,
+                AddButton, SelectionBar, QuotePanel, Cta, Footer…
+  hooks/        useSelection, useDialog, useReveal, useParallax, useScrollSpy
   styles/       tokens.css (design tokens) y global.css
 public/
   img/          fotos optimizadas (WebP, 3 tamaños)

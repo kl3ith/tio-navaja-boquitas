@@ -1,7 +1,7 @@
 .footer {
   background: var(--petrol-9);
   color: var(--cream);
-  padding-block: 0 calc(var(--s-7) + env(safe-area-inset-bottom));
+  padding-block: 0 calc(var(--s-7) + 4.5rem + env(safe-area-inset-bottom));
 }
 .footer__band {
   height: 3.25rem;

@@ -107,6 +107,10 @@
   font-size: var(--text-md);
   max-width: 34rem;
 }
+.modal__add {
+  justify-self: start;
+  margin-top: var(--s-2);
+}
 .modal__rule {
   margin-top: var(--s-3);
 }

@@ -1,6 +1,7 @@
 import type { Boquita } from '../content/boquitas'
 import { Picture } from './Picture'
-import { Plus } from './Icons'
+import { AddButton } from './AddButton'
+import { useSelection } from '../hooks/useSelection'
 import './BoquitaCard.css'
 
 export type Variant = 'feature' | 'photo' | 'type' | 'row'
@@ -21,9 +22,14 @@ const pad = (n: number) => String(n).padStart(2, '0')
 
 export function BoquitaCard({ item, index, variant, onOpen, note, sizes, style, className = '' }: Props) {
   const withPhoto = !!item.image
+  const { has } = useSelection()
+  const selected = has(item.id)
   return (
     <article
+      /* El estado va en data-selected y no en className: la animación de entrada
+         añade `is-in` por fuera de React y un className dinámico la borraría. */
       className={`card card--${variant} ${withPhoto ? 'card--has-photo' : 'card--typo'} reveal ${className}`}
+      data-selected={selected || undefined}
       style={style}
     >
       {withPhoto && (
@@ -55,9 +61,7 @@ export function BoquitaCard({ item, index, variant, onOpen, note, sizes, style, 
             {note}
           </span>
         )}
-        <span className="card__more" aria-hidden="true">
-          <Plus />
-        </span>
+        <AddButton item={item} />
       </div>
     </article>
   )

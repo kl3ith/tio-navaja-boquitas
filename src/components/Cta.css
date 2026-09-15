@@ -59,6 +59,11 @@
   justify-items: center;
   gap: var(--s-3);
 }
+.cta__hint {
+  max-width: 28rem;
+  font-size: var(--text-sm);
+  color: rgba(243, 231, 211, 0.75);
+}
 .cta__pending {
   min-height: 1.5rem;
   max-width: 28rem;
