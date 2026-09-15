@@ -1,0 +1,260 @@
+.cat {
+  padding-block: var(--s-9);
+  overflow: clip;
+}
+.cat__head {
+  position: relative;
+  display: grid;
+  gap: var(--s-2);
+  padding-bottom: var(--s-6);
+  margin-bottom: var(--s-7);
+  border-bottom: 1px solid var(--line-strong);
+}
+.cat__chapter-sep {
+  margin-inline: 0.5rem;
+  color: var(--accent);
+}
+.cat__title {
+  font-size: var(--text-3xl);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+}
+.cat__intro {
+  font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem);
+  margin-top: 0.2rem;
+}
+.cat__count {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+.cat__grid {
+  display: grid;
+  gap: var(--s-6);
+}
+
+/* ===== FRÍAS: composición asimétrica con superposición ===== */
+.cat--frias .card--type .card__typo {
+  color: var(--petrol-3);
+}
+.cat--frias .card--feature .card__media {
+  outline-color: var(--petrol-3);
+}
+@media (min-width: 1024px) {
+  .cat--frias .cat__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    column-gap: var(--s-6);
+    row-gap: var(--s-7);
+  }
+  .cat--frias .card:nth-child(1) {
+    grid-column: 1 / 6;
+    grid-row: 1;
+  }
+  .cat--frias .card:nth-child(2) {
+    grid-column: 1 / 5;
+    grid-row: 2;
+    align-self: end;
+    transform: rotate(-0.6deg);
+  }
+  .cat--frias .card:nth-child(3) {
+    grid-column: 6 / 13;
+    grid-row: 1 / 3;
+    margin-top: -3.5rem;
+  }
+  .cat--frias .card:nth-child(4) {
+    grid-column: 3 / 9;
+    grid-row: 3;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .cat--frias .cat__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .cat--frias .card:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===== CALIENTES: bento denso con foto ambiente ===== */
+.cat--calientes .cat__head {
+  border-bottom-color: var(--orange);
+}
+.cat--calientes .cat__title {
+  color: var(--cream);
+}
+.cat--calientes .cat__ambient {
+  position: relative;
+  margin: 0 0 var(--s-7);
+  max-width: 24rem;
+  will-change: transform;
+}
+.cat--calientes .cat__ambient img {
+  width: 100%;
+  height: auto;
+  filter: saturate(1.05);
+}
+.cat__ambient-tag {
+  position: absolute;
+  left: -0.5rem;
+  bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--orange-2);
+  transform: rotate(-5deg);
+  background: var(--ink-2);
+  padding: 0.1rem 0.6rem;
+}
+.cat--calientes .card--type {
+  background: rgba(243, 234, 217, 0.03);
+}
+.cat--calientes .card--type .card__typo {
+  color: var(--orange);
+}
+.cat--calientes .card--feature .card__media {
+  outline-color: var(--orange);
+}
+@media (min-width: 640px) {
+  .cat--calientes .cat__grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-flow: dense;
+  }
+  .cat--calientes .card--feature {
+    grid-column: span 6;
+  }
+  .cat--calientes .card--photo {
+    grid-column: span 3;
+  }
+  .cat--calientes .card--type {
+    grid-column: span 3;
+  }
+}
+@media (min-width: 1024px) {
+  .cat--calientes .cat__head {
+    grid-template-columns: 1fr;
+    padding-right: 32%;
+  }
+  .cat--calientes .cat__ambient {
+    position: absolute;
+    right: var(--gutter);
+    top: calc(var(--s-9) - 2rem);
+    width: 28%;
+    max-width: 26rem;
+    margin: 0;
+  }
+  .cat--calientes .cat__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    row-gap: var(--s-8);
+    padding-right: 0;
+  }
+  /* 1 Yakitori (feature) */
+  .cat--calientes .card:nth-child(1) {
+    grid-column: 1 / 8;
+    margin-top: 6rem;
+  }
+  /* 2 Sliders */
+  .cat--calientes .card:nth-child(2) {
+    grid-column: 9 / 13;
+    align-self: end;
+  }
+  /* 3 Canastitas (photo) */
+  .cat--calientes .card:nth-child(3) {
+    grid-column: 1 / 5;
+  }
+  /* 4 Croqueta pulpo */
+  .cat--calientes .card:nth-child(4) {
+    grid-column: 5 / 9;
+  }
+  /* 5 Croquetas jamón */
+  .cat--calientes .card:nth-child(5) {
+    grid-column: 9 / 13;
+    transform: translateY(2.5rem);
+  }
+  /* 6 Carimañola (photo) */
+  .cat--calientes .card:nth-child(6) {
+    grid-column: 8 / 13;
+  }
+  /* 7 Wings */
+  .cat--calientes .card:nth-child(7) {
+    grid-column: 1 / 4;
+    align-self: end;
+  }
+  /* 8 Wanton */
+  .cat--calientes .card:nth-child(8) {
+    grid-column: 4 / 8;
+    align-self: end;
+  }
+}
+
+/* ===== DULCES: carta + flat-lay pegado ===== */
+.cat--dulces .cat__head {
+  border-bottom-color: var(--orange-2);
+}
+.cat--dulces .cat__flatlay {
+  position: relative;
+  margin-bottom: var(--s-7);
+  max-height: 70vh;
+  overflow: hidden;
+  outline: 1px solid var(--line-strong);
+  outline-offset: 0.6rem;
+}
+.cat--dulces .cat__flatlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+.cat__flatlay-tag {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 0.35rem 0.7rem;
+  background: var(--burgundy);
+  color: var(--cream);
+}
+.cat--dulces .card--row .card__num,
+.cat--dulces .card--row .card__more {
+  color: var(--orange-2);
+  border-color: var(--line-strong);
+}
+@media (min-width: 1024px) {
+  .cat--dulces .wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: var(--s-8);
+  }
+  .cat--dulces .cat__head {
+    grid-column: 1 / -1;
+  }
+  .cat--dulces .cat__flatlay {
+    position: sticky;
+    top: calc(var(--nav-h) + 1.5rem);
+    margin: 0;
+    max-height: calc(100vh - var(--nav-h) - 3rem);
+    aspect-ratio: 941 / 1672;
+    transform: rotate(-1deg);
+  }
+  .cat--dulces .cat__grid {
+    gap: 0;
+    align-content: start;
+    padding-top: var(--s-4);
+  }
+}
+@media (max-width: 640px) {
+  .cat {
+    padding-block: var(--s-8);
+  }
+  .cat__count {
+    position: static;
+    margin-top: var(--s-2);
+  }
+  .cat--dulces .cat__flatlay {
+    max-height: 60vh;
+  }
+}

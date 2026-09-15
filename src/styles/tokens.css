@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Tío Navaja · Boquitas — Design tokens
+   Paleta: verde petróleo, burgundy, rojo vino, naranja cálido, crema, negro.
+   El color se usa como acento; la base es crema (día) y petróleo/negro (noche).
+   ========================================================================== */
+:root {
+  /* Color */
+  --ink: #0d0c0b;
+  --ink-2: #1a1816;
+  --petrol: #0f2b2e;
+  --petrol-2: #163b3f;
+  --petrol-3: #23555a;
+  --burgundy: #571522;
+  --burgundy-2: #6e1c2c;
+  --wine: #8f2a36;
+  --orange: #e2793a;
+  --orange-2: #f0a35c;
+  --cream: #f3ead9;
+  --cream-2: #eadfc8;
+  --bone: #fbf6ec;
+  --sand: #d9c9a8;
+
+  /* Roles */
+  --bg: var(--cream);
+  --fg: var(--ink);
+  --muted: #5e5449;
+  --line: rgba(13, 12, 11, 0.18);
+  --line-strong: rgba(13, 12, 11, 0.55);
+  --accent: var(--wine);
+  --accent-warm: var(--orange);
+  --focus: var(--orange);
+
+  /* Type */
+  --font-display: 'Fraunces Variable', 'Iowan Old Style', 'Palatino', Georgia, serif;
+  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-script: 'Caveat', 'Bradley Hand', 'Comic Sans MS', cursive;
+
+  --text-xs: 0.72rem;
+  --text-sm: 0.85rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: clamp(1.25rem, 1.05rem + 0.9vw, 1.6rem);
+  --text-xl: clamp(1.75rem, 1.3rem + 2vw, 2.75rem);
+  --text-2xl: clamp(2.4rem, 1.6rem + 4vw, 4.5rem);
+  --text-3xl: clamp(3.6rem, 2rem + 9vw, 9.5rem);
+
+  /* Space (escala espaciosa) */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4.5rem;
+  --s-9: 6rem;
+  --s-10: 9rem;
+
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --max: 1360px;
+  --nav-h: 3.5rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur: 320ms;
+  --dur-slow: 700ms;
+
+  --tap: 44px;
+}
+
+/* Contextos de color por sección */
+.theme-night {
+  --bg: var(--petrol);
+  --fg: var(--cream);
+  --muted: rgba(243, 234, 217, 0.68);
+  --line: rgba(243, 234, 217, 0.2);
+  --line-strong: rgba(243, 234, 217, 0.6);
+  --accent: var(--orange-2);
+  --focus: var(--orange-2);
+}
+.theme-ember {
+  --bg: var(--ink-2);
+  --fg: var(--cream);
+  --muted: rgba(243, 234, 217, 0.66);
+  --line: rgba(243, 234, 217, 0.18);
+  --line-strong: rgba(243, 234, 217, 0.6);
+  --accent: var(--orange);
+  --focus: var(--orange-2);
+}
+.theme-plum {
+  --bg: var(--burgundy);
+  --fg: var(--cream);
+  --muted: rgba(243, 234, 217, 0.7);
+  --line: rgba(243, 234, 217, 0.22);
+  --line-strong: rgba(243, 234, 217, 0.62);
+  --accent: var(--orange-2);
+  --focus: var(--orange-2);
+}
+.theme-bone {
+  --bg: var(--bone);
+  --fg: var(--ink);
+  --muted: #5e5449;
+  --line: rgba(13, 12, 11, 0.16);
+  --accent: var(--petrol-3);
+}

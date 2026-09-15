@@ -1,0 +1,179 @@
+{
+  "brownie": {
+    "sources": [
+      {
+        "file": "brownie-480.webp",
+        "w": 480
+      }
+    ],
+    "ratio": 0.9619
+  },
+  "calientes-ambiente": {
+    "sources": [
+      {
+        "file": "calientes-ambiente-480.webp",
+        "w": 480
+      },
+      {
+        "file": "calientes-ambiente-960.webp",
+        "w": 960
+      },
+      {
+        "file": "calientes-ambiente-1600.webp",
+        "w": 1024
+      }
+    ],
+    "ratio": 0.6667
+  },
+  "canastitas": {
+    "sources": [
+      {
+        "file": "canastitas-480.webp",
+        "w": 480
+      },
+      {
+        "file": "canastitas-960.webp",
+        "w": 960
+      },
+      {
+        "file": "canastitas-1600.webp",
+        "w": 1254
+      }
+    ],
+    "ratio": 1.0
+  },
+  "carimanola": {
+    "sources": [
+      {
+        "file": "carimanola-480.webp",
+        "w": 480
+      },
+      {
+        "file": "carimanola-960.webp",
+        "w": 960
+      },
+      {
+        "file": "carimanola-1600.webp",
+        "w": 1254
+      }
+    ],
+    "ratio": 1.0
+  },
+  "cheesecake": {
+    "sources": [
+      {
+        "file": "cheesecake-480.webp",
+        "w": 480
+      }
+    ],
+    "ratio": 1.0667
+  },
+  "flan": {
+    "sources": [
+      {
+        "file": "flan-480.webp",
+        "w": 480
+      },
+      {
+        "file": "flan-960.webp",
+        "w": 481
+      }
+    ],
+    "ratio": 0.943
+  },
+  "mesa-amigos": {
+    "sources": [
+      {
+        "file": "mesa-amigos-480.webp",
+        "w": 480
+      },
+      {
+        "file": "mesa-amigos-960.webp",
+        "w": 960
+      },
+      {
+        "file": "mesa-amigos-1600.webp",
+        "w": 1536
+      }
+    ],
+    "ratio": 1.5
+  },
+  "mousse": {
+    "sources": [
+      {
+        "file": "mousse-480.webp",
+        "w": 480
+      }
+    ],
+    "ratio": 1.0021
+  },
+  "postres": {
+    "sources": [
+      {
+        "file": "postres-480.webp",
+        "w": 480
+      },
+      {
+        "file": "postres-960.webp",
+        "w": 941
+      }
+    ],
+    "ratio": 0.5627
+  },
+  "tartaletas": {
+    "sources": [
+      {
+        "file": "tartaletas-480.webp",
+        "w": 480
+      }
+    ],
+    "ratio": 0.9057
+  },
+  "tostadas": {
+    "sources": [
+      {
+        "file": "tostadas-480.webp",
+        "w": 480
+      },
+      {
+        "file": "tostadas-960.webp",
+        "w": 960
+      },
+      {
+        "file": "tostadas-1600.webp",
+        "w": 1374
+      }
+    ],
+    "ratio": 1.2
+  },
+  "tres-leches": {
+    "sources": [
+      {
+        "file": "tres-leches-480.webp",
+        "w": 480
+      },
+      {
+        "file": "tres-leches-960.webp",
+        "w": 520
+      }
+    ],
+    "ratio": 1.0619
+  },
+  "yakitori": {
+    "sources": [
+      {
+        "file": "yakitori-480.webp",
+        "w": 480
+      },
+      {
+        "file": "yakitori-960.webp",
+        "w": 960
+      },
+      {
+        "file": "yakitori-1600.webp",
+        "w": 1254
+      }
+    ],
+    "ratio": 1.0
+  }
+}
